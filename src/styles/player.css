@@ -1,0 +1,134 @@
+.player {
+  z-index: 10;
+  position: fixed;
+  left: 3.8%;
+  right: 3.8%;
+  bottom: 24px;
+  height: 78px;
+  padding: 0 29px;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 150px;
+  gap: 0;
+  align-items: center;
+  border: 1px solid #c9cbff;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.91);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 15px 50px #282d5311;
+  color: #252eef;
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.player button {
+  color: inherit;
+  border: 0;
+  background: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.player-controls button {
+  width: 24px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+.player-controls .material-symbols-outlined {
+  font-size: 24px;
+}
+.player-track {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-width: 0;
+  gap: 7px;
+}
+.player-track-title {
+  color: #252eef;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player-track-title strong {
+  font-weight: 700;
+}
+.player-track-title span {
+  font-weight: 500;
+}
+.progress-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  gap: 12px;
+  align-items: center;
+  color: #555b85;
+  font-size: 10px;
+  margin-top: 0;
+}
+.progress-row input {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  touch-action: none;
+}
+.progress-row input::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #4020ff 0 var(--progress, 0%), #e3e4ed var(--progress, 0%) 100%);
+}
+.progress-row input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.progress-row input::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: #e3e4ed;
+}
+.progress-row input::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #4020ff;
+}
+.progress-row input::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.progress-row input:focus-visible {
+  outline: 2px solid #8c7aff;
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+.player-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.player-action {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+.player-action .material-symbols-outlined {
+  font-size: 24px;
+}
+

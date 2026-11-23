@@ -1,0 +1,124 @@
+/* Search results are connected to the live catalog and need to layer above it. */
+.search-panel {
+  position: fixed;
+  z-index: 30;
+  top: 86px;
+  width: min(560px, calc(100vw - 32px));
+  flex-wrap: wrap;
+}
+.search-panel button[type='submit'] {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #3826ee;
+  color: #fff;
+  font-size: 12px;
+}
+.search-panel button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 6px;
+  border: 1px solid #e5e6f1;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 44px #19204a20;
+  backdrop-filter: blur(20px);
+}
+.search-result {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 9px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #272936;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+.search-result:hover {
+  transform: translateX(2px);
+  background: #f4f3ff;
+}
+.search-result img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.search-result > span {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 3px;
+}
+.search-result strong,
+.search-result small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-result strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.search-result small {
+  color: #858897;
+  font-size: 11px;
+}
+.search-result > .material-symbols-outlined {
+  color: #3826ee;
+  font-size: 18px;
+}
+@media (max-width: 760px) {
+  .search-panel {
+    top: 72px;
+  }
+}
+
+.artist-album-cluster .cluster-item {
+  filter: drop-shadow(0 8px 20px rgba(33, 35, 58, 0.07));
+}
+.artist-album-cluster .cluster-item__art {
+  transform: scale(1);
+  transition:
+    transform 0.24s cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 0.24s ease;
+}
+.artist-album-cluster .cluster-item:hover .cluster-item__art {
+  transform: scale(1.025);
+  box-shadow: 0 16px 34px rgba(33, 35, 58, 0.16);
+}
+.progress-row input::-webkit-slider-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}
+.progress-row input::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-result,
+  .artist-album-cluster .cluster-item__art {
+    transition: none;
+  }
+}

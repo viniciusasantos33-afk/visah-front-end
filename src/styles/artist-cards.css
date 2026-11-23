@@ -1,0 +1,54 @@
+.artist-card {
+  position: relative;
+  width: clamp(136px, 14vw, 180px);
+  aspect-ratio: 1;
+  animation: bubble-appear 0.55s ease both;
+}
+.artist-card:nth-child(5n + 2),
+.artist-card:nth-child(5n + 4) {
+  transform: translateY(28px);
+}
+.artist-card:nth-child(5n + 5) {
+  transform: translateY(-18px);
+}
+.artist-card__portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #e7e8ec;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 10px 28px #23283a12;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+.artist-card__portrait:hover {
+  transform: scale(1.045);
+  box-shadow: 0 16px 38px #23283a24;
+}
+.artist-card__name {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  display: block;
+  max-width: calc(100% + 32px);
+  padding: 6px 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px #191a2318;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
